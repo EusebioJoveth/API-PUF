@@ -1,0 +1,11 @@
+{
+  "name": "puf-api",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Eusebio Jovet",
+    "email": "yurijoveth@hmail.com"
+  },
+  "license": "MIT",
+  "private": true
+}
