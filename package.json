@@ -7,5 +7,25 @@
     "email": "yurijoveth@hmail.com"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "fix": "echo 123",
+    "prepare": "husky install"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    ".src/**/*.{js,md,json}": [
+      "yarn fix"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3"
+  }
 }
