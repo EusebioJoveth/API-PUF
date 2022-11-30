@@ -12,7 +12,7 @@
     "fix": "run-s \"fix:* {@}\" --",
     "fix:lint": "eslint --fix --no-error-on-unmatched-pattern",
     "fix:format": "prettier --write",
-    "format": "yarn fix:format 'src/**/*.(js|md|json)'",
+    "format": "yarn fix:format 'src/**/*.(js|ts|md|json)'",
     "lint": "yarn fix:lint src/**/*.{js,ts,md,json}",
     "prepare": "husky install"
   },
@@ -22,13 +22,19 @@
     ]
   },
   "lint-staged": {
-    ".src/**/*.{js,md,json}": [
+    "./src/**/*.{js,md,json}": [
       "yarn fix"
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-json": "^3.1.0",
