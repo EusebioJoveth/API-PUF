@@ -1,5 +1,14 @@
-export const list = (ctx) =>{
-    ctx.body = 'list Eusebio!'
+import { prisma } from '~/data'
+
+export const list = async (ctx) =>{
+    try{
+        const users = await prisma.user.findMany()
+        ctx.body = users
+
+    }catch(error){
+        ctx.status = 500
+        ctx.body = 'Ops! Algo deu errado, tente novamente'
+    }
 }
 
 export const create =(ctx) =>{
